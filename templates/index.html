@@ -1,0 +1,77 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Authentication</title>
+</head>
+<body>
+    <h1>Authentication</h1>
+    <p><a href="{{ url_for('login') }}">Login</a></p>
+    <p><a href="{{ url_for('register') }}">Register</a></p>
+</body>
+</html>
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build my trips</title>
+</head>
+<body>
+    <h1>Build My Trips</h1>
+
+    <form id="dataForm">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required>
+
+        <label for="budget">Budget:</label>
+        <input type="number" id="budget" name="budget" required>
+
+        <button type="button" onclick="getData()">Get a Plan</button>
+    </form>
+
+    <div id="responseDiv"></div>
+
+    <script>
+        function getData() {
+            // Retrieve values from input fields
+            const city = document.getElementById('city').value;
+            const budget = document.getElementById('budget').value;
+
+            // Validate input values if needed
+
+            // Prepare data for the backend
+            const requestData = {
+                city: city,
+                budget: budget
+            };
+
+            // Send a POST request to the backend
+            fetch('/api/data', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(requestData),
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Response from server:', data);
+                // Display the response in the HTML
+                document.getElementById('responseDiv').innerText = data.message;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+        }
+    </script>
+</body>
+</html> -->
